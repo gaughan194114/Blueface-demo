@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="padding-header">
+    <span class="spacer">
+      {{ 'header-text' | translate: { name: 'Aidan' } }}
+    </span>
+    <span class="spacer"
+      ><button [routerLink]="['/primary-demo']" mat-raised-button>
+        <a>{{ 'First' | translate }}</a>
+      </button></span
+    >
+    <span class="spacer"
+      ><button [routerLink]="['/secondary-demo']" mat-raised-button>
+        <a>{{ 'Second' | translate }}</a>
+      </button></span
+    >
+    <span class="spacer">
+      <mat-select [(ngModel)]="selectedLang" (ngModelChange)="updateLang()">
+        <mat-option value="en">English</mat-option>
+        <mat-option value="fr">French</mat-option>
+        <mat-option value="es">Spanish</mat-option>
+      </mat-select>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>

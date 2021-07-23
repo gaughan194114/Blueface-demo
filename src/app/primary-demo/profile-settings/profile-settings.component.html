@@ -1,0 +1,47 @@
+<div>
+  <h1>{{ title | translate }}</h1>
+  <div>
+    <!--AC1: Display Username-->
+    <p>{{ 'Username' | translate }}: {{ user.username }}</p>
+  </div>
+  <div>
+    <label>{{ 'First-Name' | translate }}:</label>
+    <input
+      [disabled]="!hasUserBeenRetrieved"
+      type="text"
+      [(ngModel)]="user.firstName"
+    />
+    <!-- AC4 Add Last Name field-->
+    <input
+      [disabled]="!hasUserBeenRetrieved"
+      type="text"
+      [(ngModel)]="user.lastName"
+    /><input
+      [disabled]="!hasUserBeenRetrieved"
+      readonly
+      type="text"
+      [(ngModel)]="user.email"
+    />
+    <!-- AC5 Add email field-->
+    <input
+      [disabled]="
+        user == undefined ||
+        user?.firstName == undefined ||
+        isSavingProfile ||
+        !hasUserBeenRetrieved
+      "
+      type="button"
+      (click)="saveProfile()"
+      value="{{ 'Save' | translate }}"
+    />
+  </div>
+  <!-- AC2 Disable inputs and show loading while fetch in progress-->
+  <p *ngIf="!hasUserBeenRetrieved && !hasEncounteredError">
+    {{ 'Loading' | translate }}...
+  </p>
+  <p *ngIf="isSavingProfile">{{ 'Saving' | translate }}...</p>
+  <!-- AC3 Display error message-->
+  <p *ngIf="hasEncounteredError">
+    {{ 'Error' | translate }}! {{ errorMessage }}
+  </p>
+</div>

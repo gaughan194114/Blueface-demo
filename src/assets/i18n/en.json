@@ -1,0 +1,14 @@
+{
+  "Profile": "Profile",
+  "header-text": "{{name}} Interview Application",
+  "First": "First Scenario",
+  "Second": "Secondary Scenario",
+  "Username": "Username",
+  "First-Name": "First Name",
+  "Last-Name": "Last Name",
+  "Email": "Email",
+  "Save": "Save",
+  "Loading": "Loading Profile",
+  "Saving": "Saving Profile",
+  "Error": "Error"
+}

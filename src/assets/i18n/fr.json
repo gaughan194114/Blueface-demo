@@ -1,0 +1,14 @@
+{
+  "Profile": "Profil",
+  "header-text": "Demande d'entrevue du {{name}}",
+  "First": "Premier scénario",
+  "Second": "Deuxième scénario",
+  "Username": "Nom d'utilisateur",
+  "First-Name": "Prénom",
+  "Last-Name": "Nom de famille",
+  "Email": "E-mail",
+  "Save": "Sauver",
+  "Loading": "Chargement du profil",
+  "Saving": "Enregistrement du profil",
+  "Error": "Erreur"
+}

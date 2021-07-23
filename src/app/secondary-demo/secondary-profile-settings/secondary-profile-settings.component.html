@@ -1,0 +1,72 @@
+<div class="container">
+  <h1 class="header">{{ title | translate }}</h1>
+  <div class="child-container">
+    <p>{{ 'Username' | translate }}: {{ user.username }}</p>
+  </div>
+  <div class="child-container">
+    <span class="spacer">
+      <mat-form-field>
+        <mat-label>{{ 'First-Name' | translate }}</mat-label>
+        <input
+          matInput
+          [disabled]="!hasUserBeenRetrieved"
+          type="text"
+          [(ngModel)]="user.firstName"
+        />
+      </mat-form-field>
+    </span>
+    <span class="spacer">
+      <mat-form-field>
+        <mat-label>{{ 'Last-Name' | translate }}</mat-label>
+        <input
+          matInput
+          [disabled]="!hasUserBeenRetrieved"
+          type="text"
+          [(ngModel)]="user.lastName"
+        />
+      </mat-form-field>
+    </span>
+    <span class="spacer">
+      <mat-form-field>
+        <mat-label>{{ 'Email' | translate }}</mat-label>
+        <input
+          matInput
+          [disabled]="!hasUserBeenRetrieved"
+          readonly
+          type="text"
+          [(ngModel)]="user.email"
+        />
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="child-container">
+    <span class="spacer-button">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="
+          user == undefined ||
+          user?.firstName == undefined ||
+          isSavingProfile ||
+          !hasUserBeenRetrieved
+        "
+        (click)="saveProfile()"
+      >
+        {{ 'Save' | translate }}
+      </button>
+    </span>
+  </div>
+  <div class="child-container">
+    <p *ngIf="!hasUserBeenRetrieved && !hasEncounteredError">
+      {{ 'Loading' | translate }}...
+      <mat-spinner></mat-spinner>
+    </p>
+    <p *ngIf="isSavingProfile">
+      {{ 'Saving' | translate }}...
+      <mat-spinner></mat-spinner>
+    </p>
+    <p *ngIf="hasEncounteredError">
+      {{ 'Error' | translate }}! {{ errorMessage }}
+    </p>
+  </div>
+</div>

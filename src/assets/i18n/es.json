@@ -1,0 +1,14 @@
+{
+  "Profile": "Perfil",
+  "header-text": "Solicitud de entrevista de {{name}}",
+  "First": "Primer escenario",
+  "Second": "Segundo escenario",
+  "Username": "Nombre de usuario",
+  "First-Name": "Primer nombre",
+  "Last-Name": "Apellido",
+  "Email": "Email",
+  "Save": "Guardar",
+  "Loading": "Carga de perfil",
+  "Saving": "Guardar perfil",
+  "Error": "Error"
+}
